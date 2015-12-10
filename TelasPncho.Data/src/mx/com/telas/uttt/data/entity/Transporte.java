@@ -1,39 +1,33 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mx.com.telas.uttt.data.entity;
-
-import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 /**
  *
  * @author Alexis Gasga
  */
-@Entity
-public class Transporte implements Serializable {
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+public class Transporte {
+    private Integer idTransporte;
+    private Caracteristica idCaracteristica;
 
-    public Integer getId() {
-        return id;
+    public Integer getIdTransporte() {
+        return idTransporte;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdTransporte(Integer id) {
+        this.idTransporte = id;
+    }
+
+    public Caracteristica getIdCaracteristica() {
+        return idCaracteristica;
+    }
+
+    public void setIdCaracteristica(Caracteristica idCaracteristica) {
+        this.idCaracteristica = idCaracteristica;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (idTransporte != null ? idTransporte.hashCode() : 0);
         return hash;
     }
 
@@ -44,7 +38,7 @@ public class Transporte implements Serializable {
             return false;
         }
         Transporte other = (Transporte) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.idTransporte == null && other.idTransporte != null) || (this.idTransporte != null && !this.idTransporte.equals(other.idTransporte))) {
             return false;
         }
         return true;
@@ -52,7 +46,7 @@ public class Transporte implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.com.telas.uttt.data.entity.Transporte[ id=" + id + " ]";
+        return "mx.com.telas.uttt.data.entity.Transporte[ id=" + idTransporte + " ]";
     }
     
 }
