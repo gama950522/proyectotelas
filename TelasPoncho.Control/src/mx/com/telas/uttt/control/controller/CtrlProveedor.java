@@ -68,6 +68,27 @@ public class CtrlProveedor implements IOperaciones{
             return null;
         }
     }
+    
+    public List<Object> find(String referencia) {
+        CtrlEmpresa ctrlEmpresa = new CtrlEmpresa(connection);
+        List<Object> listaProvedoores = null;
+        try {
+            PreparedStatement query = connection.prepareStatement("select * from Proveedor where idEmpresa=(select idEmpresa from Empresa where referencia='"+referencia+"')");
+            ResultSet result = query.executeQuery();
+            listaProvedoores = new ArrayList<>();
+            while(result.next()){
+                Proveedor provTemp = new Proveedor();
+                provTemp.setIdProveedor(result.getInt(1));
+                provTemp.setIdEmpresa((Empresa) ctrlEmpresa.find(result.getInt(2)));
+                listaProvedoores.add(provTemp);
+            }
+            query.close();
+            return listaProvedoores;
+        } catch (Exception ex) {
+            System.out.println(ex);
+            return null;
+        }
+    }
 
     @Override
     public List<Object> find(List<Object> lst) {
