@@ -1,7 +1,6 @@
 package mx.com.telas.uttt.view.transporte;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.List;
 import javax.swing.JOptionPane;
 import mx.com.telas.uttt.control.controller.CtrlCaracteristica;

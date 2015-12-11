@@ -104,8 +104,6 @@ public class FrmEmpleadoPrincipal extends javax.swing.JInternalFrame {
         jButton6 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
-        jToolBar2 = new javax.swing.JToolBar();
-        jButton1 = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -295,7 +293,7 @@ public class FrmEmpleadoPrincipal extends javax.swing.JInternalFrame {
         jLabel2.setText("Numero de empleado:");
 
         lblNumCuenta.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        lblNumCuenta.setText("jLabel5");
+        lblNumCuenta.setText("[...]");
 
         jScrollPane4.setBorder(null);
 
@@ -304,62 +302,62 @@ public class FrmEmpleadoPrincipal extends javax.swing.JInternalFrame {
         jLabel6.setText("Nombre:");
 
         lblNombre.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        lblNombre.setText("jLabel7");
+        lblNombre.setText("[...]");
 
         jLabel8.setText("Apellido paterno:");
 
         jLabel9.setText("Apellido materno:");
 
         lblAPaterno.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        lblAPaterno.setText("jLabel10");
+        lblAPaterno.setText("[...]");
 
         lblAMaterno.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        lblAMaterno.setText("jLabel11");
+        lblAMaterno.setText("[...]");
 
         jLabel10.setText("Edad:");
 
         lblEdad.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        lblEdad.setText("jLabel11");
+        lblEdad.setText("[...]");
 
         jLabel11.setText("Fecha de nacimiento:");
 
         lblFechaNacimiento.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        lblFechaNacimiento.setText("jLabel12");
+        lblFechaNacimiento.setText("[...]");
 
         jLabel13.setText("Sexo:");
 
         lblSexo.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        lblSexo.setText("jLabel14");
+        lblSexo.setText("[...]");
 
         jLabel15.setText("Estado civil:");
 
         lblEstadoCivil.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        lblEstadoCivil.setText("jLabel16");
+        lblEstadoCivil.setText("[...]");
 
         jLabel17.setText("CURP:");
 
         lblCurp.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        lblCurp.setText("jLabel18");
+        lblCurp.setText("[...]");
 
         jLabel19.setText("RFC:");
 
         lblRfc.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        lblRfc.setText("jLabel18");
+        lblRfc.setText("[...]");
 
         jLabel12.setText("Turno:");
 
         lblTurno.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        lblTurno.setText("jLabel14");
+        lblTurno.setText("[...]");
 
         jLabel14.setText("Departamento:");
 
         lblDepartamento.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        lblDepartamento.setText("jLabel16");
+        lblDepartamento.setText("[...]");
 
         jLabel16.setText("Escolaridad:");
 
         lblEscolaridad.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        lblEscolaridad.setText("jLabel18");
+        lblEscolaridad.setText("[...]");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -495,7 +493,7 @@ public class FrmEmpleadoPrincipal extends javax.swing.JInternalFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addComponent(jSeparator3)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -512,27 +510,13 @@ public class FrmEmpleadoPrincipal extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jLabel5.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText(" R E G I S T R O   D E   E M P L E A D O S ");
-
-        jToolBar2.setFloatable(false);
-        jToolBar2.setBorderPainted(false);
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/com/telas/uttt/view/img/1447403049_synchronize.png"))); // NOI18N
-        jButton1.setFocusable(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jToolBar2.add(jButton1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -553,14 +537,12 @@ public class FrmEmpleadoPrincipal extends javax.swing.JInternalFrame {
                         .addComponent(jLabel5)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addComponent(jToolBar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -647,10 +629,6 @@ public class FrmEmpleadoPrincipal extends javax.swing.JInternalFrame {
         setTableEmpleado();
         nombreEmpleado = "";
     }//GEN-LAST:event_txtBusquedaActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void tblRegistrosValueChanged(ListSelectionEvent lse){
         if(tblEmpleados.getSelectedRow() != -1){
@@ -799,19 +777,19 @@ public class FrmEmpleadoPrincipal extends javax.swing.JInternalFrame {
     
     private boolean removeField(Empleado empleado){
         try {
-            CtrlEmpleado ctrlEmpleado = new CtrlEmpleado(connection);
+            //CtrlEmpleado ctrlEmpleado = new CtrlEmpleado(connection);
             CtrlPersona ctrlPersona = new CtrlPersona(connection);
-            CtrlCuenta ctrlCuenta = new CtrlCuenta(connection);
-            CtrlDireccion ctrlDireccion = new CtrlDireccion(connection);
-            CtrlTelefono ctrlTelefono = new CtrlTelefono(connection);
+            //CtrlCuenta ctrlCuenta = new CtrlCuenta(connection);
+            //CtrlDireccion ctrlDireccion = new CtrlDireccion(connection);
+            //CtrlTelefono ctrlTelefono = new CtrlTelefono(connection);
             //CtrlEmail ctrlEmail = new CtrlEmail(connection);
             connection.setAutoCommit(false);
-            if(ctrlPersona.delete(empleado.getIdPersona().getIdPersona())
-                    && ctrlCuenta.delete(empleado.getIdCuenta().getIdCuenta())
-                    && ctrlDireccion.delete(empleado.getIdDireccion().getIdDireccion())
-                    && ctrlTelefono.delete(empleado.getIdTelefono().getIdTelefono())
-                    //&& ctrlEmail.delete(empleado.getEmail().getIdEmail())
-                    && ctrlEmpleado.delete(empleado.getIdEmpleado())) {
+            if(ctrlPersona.delete(empleado.getIdPersona().getIdPersona())){
+//                    && ctrlCuenta.delete(empleado.getIdCuenta().getIdCuenta())
+//                    && ctrlDireccion.delete(empleado.getIdDireccion().getIdDireccion())
+//                    && ctrlTelefono.delete(empleado.getIdTelefono().getIdTelefono())
+//                    //&& ctrlEmail.delete(empleado.getEmail().getIdEmail())
+//                    && ctrlEmpleado.delete(empleado.getIdEmpleado())) {
                 connection.commit();
                 return true;
             }else{
@@ -958,7 +936,6 @@ public class FrmEmpleadoPrincipal extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnNew;
     private javax.swing.JButton btnReport;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -991,7 +968,6 @@ public class FrmEmpleadoPrincipal extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JToolBar jToolBar2;
     private javax.swing.JLabel lblAMaterno;
     private javax.swing.JLabel lblAPaterno;
     private javax.swing.JLabel lblCurp;

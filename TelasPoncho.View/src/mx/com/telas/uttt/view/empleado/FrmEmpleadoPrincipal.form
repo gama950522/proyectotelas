@@ -71,14 +71,12 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
-              <Component id="jToolBar2" alignment="0" max="32767" attributes="0"/>
               <Component id="jSeparator4" alignment="1" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="jToolBar2" min="-2" pref="24" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jPanel2" max="32767" attributes="0"/>
@@ -385,7 +383,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Component id="jSeparator3" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jScrollPane4" alignment="1" max="32767" attributes="0"/>
+                  <Component id="jScrollPane4" alignment="1" pref="452" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -406,7 +404,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator3" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane4" pref="230" max="32767" attributes="0"/>
+                      <Component id="jScrollPane4" pref="254" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -448,7 +446,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="sansserif" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="jLabel5"/>
+                <Property name="text" type="java.lang.String" value="[...]"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator3">
@@ -629,7 +627,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="11" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="jLabel7"/>
+                        <Property name="text" type="java.lang.String" value="[...]"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel8">
@@ -647,7 +645,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="11" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="jLabel10"/>
+                        <Property name="text" type="java.lang.String" value="[...]"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblAMaterno">
@@ -655,7 +653,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="11" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="jLabel11"/>
+                        <Property name="text" type="java.lang.String" value="[...]"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel10">
@@ -668,7 +666,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="sansserif" size="12" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="jLabel11"/>
+                        <Property name="text" type="java.lang.String" value="[...]"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel11">
@@ -681,7 +679,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="sansserif" size="12" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="jLabel12"/>
+                        <Property name="text" type="java.lang.String" value="[...]"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel13">
@@ -694,7 +692,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="sansserif" size="12" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="jLabel14"/>
+                        <Property name="text" type="java.lang.String" value="[...]"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel15">
@@ -707,7 +705,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="sansserif" size="12" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="jLabel16"/>
+                        <Property name="text" type="java.lang.String" value="[...]"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel17">
@@ -720,7 +718,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="sansserif" size="12" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="jLabel18"/>
+                        <Property name="text" type="java.lang.String" value="[...]"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel19">
@@ -733,7 +731,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="sansserif" size="12" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="jLabel18"/>
+                        <Property name="text" type="java.lang.String" value="[...]"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel12">
@@ -746,7 +744,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="sansserif" size="12" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="jLabel14"/>
+                        <Property name="text" type="java.lang.String" value="[...]"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel14">
@@ -759,7 +757,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="sansserif" size="12" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="jLabel16"/>
+                        <Property name="text" type="java.lang.String" value="[...]"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel16">
@@ -772,7 +770,7 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="sansserif" size="12" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="jLabel18"/>
+                        <Property name="text" type="java.lang.String" value="[...]"/>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -799,29 +797,6 @@
         </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator4">
         </Component>
-        <Container class="javax.swing.JToolBar" name="jToolBar2">
-          <Properties>
-            <Property name="floatable" type="boolean" value="false"/>
-            <Property name="borderPainted" type="boolean" value="false"/>
-          </Properties>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
-          <SubComponents>
-            <Component class="javax.swing.JButton" name="jButton1">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/mx/com/telas/uttt/view/img/1447403049_synchronize.png"/>
-                </Property>
-                <Property name="focusable" type="boolean" value="false"/>
-                <Property name="horizontalTextPosition" type="int" value="0"/>
-                <Property name="verticalTextPosition" type="int" value="3"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
-              </Events>
-            </Component>
-          </SubComponents>
-        </Container>
       </SubComponents>
     </Container>
   </SubComponents>

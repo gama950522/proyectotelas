@@ -185,16 +185,28 @@ public class FrmMaquinariaPrincipal extends javax.swing.JInternalFrame {
         lblNumRegistros = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel6 = new javax.swing.JLabel();
+        lblMarca = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        lblModelo = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        lblPrecio = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        lblNumSerie = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
+        setTitle("Maquinaria");
 
         jPanel1.setBackground(new java.awt.Color(241, 241, 241));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/com/telas/uttt/view/img/Deployment-64.png"))); // NOI18N
 
-        jLabel2.setText("jLabel2");
+        jLabel2.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jLabel2.setText("[ R E G I S T R O S   D E    M A Q U I N A R I A  ]");
 
         jPanel2.setBackground(new java.awt.Color(241, 241, 241));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Filtro"));
@@ -220,6 +232,11 @@ public class FrmMaquinariaPrincipal extends javax.swing.JInternalFrame {
         jPanel3.setBackground(new java.awt.Color(241, 241, 241));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Registros"));
 
+        tblMaquinaria.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            public void valueChanged(ListSelectionEvent lse){
+                tblMaquinariaValueChanged(lse);
+            }
+        });
         jScrollPane1.setViewportView(tblMaquinaria);
 
         btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/com/telas/uttt/view/img/1447403066_plus.png"))); // NOI18N
@@ -309,15 +326,79 @@ public class FrmMaquinariaPrincipal extends javax.swing.JInternalFrame {
         jPanel4.setBackground(new java.awt.Color(241, 241, 241));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Detalle"));
 
+        jLabel4.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/com/telas/uttt/view/img/Bill-50.png"))); // NOI18N
+        jLabel4.setText("Datos de la maquinaria");
+
+        jLabel6.setText("Marca:");
+
+        lblMarca.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        lblMarca.setText("[...]");
+
+        jLabel8.setText("Modelo");
+
+        lblModelo.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        lblModelo.setText("[...]");
+
+        jLabel10.setText("Precio:");
+
+        lblPrecio.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        lblPrecio.setText("[...]");
+
+        jLabel12.setText("Numero de Serie");
+
+        lblNumSerie.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        lblNumSerie.setText("[...]");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 468, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jSeparator2)
+                        .addContainerGap())
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(lblMarca)
+                            .addComponent(lblModelo)
+                            .addComponent(jLabel10)
+                            .addComponent(lblPrecio)
+                            .addComponent(jLabel8)
+                            .addComponent(lblNumSerie)
+                            .addComponent(jLabel12))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblNumSerie)
+                .addGap(47, 47, 47)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblMarca)
+                .addGap(32, 32, 32)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblModelo)
+                .addGap(40, 40, 40)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblPrecio)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -360,7 +441,7 @@ public class FrmMaquinariaPrincipal extends javax.swing.JInternalFrame {
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                .addGap(0, 242, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
 
@@ -403,6 +484,7 @@ public class FrmMaquinariaPrincipal extends javax.swing.JInternalFrame {
                 Object maquina = tblMaquinaria.getValueAt(tblMaquinaria.getSelectedRow(), 0);
                 FrmMaquinariaManager frmMaquinariaManager = new FrmMaquinariaManager(parent, true, maquina);
                 frmMaquinariaManager.setVisible(true);
+                setTable_Mquinaria();
             }
         } catch (Exception ex) {
             System.err.println(ex);
@@ -440,6 +522,27 @@ public class FrmMaquinariaPrincipal extends javax.swing.JInternalFrame {
         }
     }
 
+    private void tblMaquinariaValueChanged(ListSelectionEvent lse) {
+        try {
+            int row = tblMaquinaria.getSelectedRow();
+            Maquinaria temp = (Maquinaria) tblMaquinaria.getValueAt(row, 0);
+            setLabelInformation(temp);
+        } catch (Exception ex) {
+            System.err.println(ex);
+        }
+    }
+
+    private void setLabelInformation(Maquinaria maquinaria) {
+        try {
+            lblNumSerie.setText(maquinaria.getIdCaracteristica().getNumSerie());
+            lblMarca.setText(maquinaria.getIdCaracteristica().getMarca());
+            lblModelo.setText(maquinaria.getIdCaracteristica().getModelo());
+            lblPrecio.setText(maquinaria.getIdCaracteristica().getCosto() + " " + maquinaria.getIdCaracteristica().getMoneda());
+        } catch (Exception ex) {
+            System.err.println(ex);
+        }
+    }
+
     private void setTable_Mquinaria() {
         try {
             cleanTable_Maquinaria();
@@ -469,7 +572,7 @@ public class FrmMaquinariaPrincipal extends javax.swing.JInternalFrame {
                 modeloMaquinaria.addRow(row);
             }
             tblMaquinaria.setModel(modeloMaquinaria);
-            if(tblMaquinaria.getRowCount() > 0){
+            if (tblMaquinaria.getRowCount() > 0) {
                 tblMaquinaria.setRowSelectionInterval(0, 0);
                 lblNumRegistros.setText(String.valueOf(tblMaquinaria.getRowCount()));
             }
@@ -495,9 +598,14 @@ public class FrmMaquinariaPrincipal extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnNew;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -505,7 +613,12 @@ public class FrmMaquinariaPrincipal extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JLabel lblMarca;
+    private javax.swing.JLabel lblModelo;
     private javax.swing.JLabel lblNumRegistros;
+    private javax.swing.JLabel lblNumSerie;
+    private javax.swing.JLabel lblPrecio;
     private javax.swing.JTable tblDepartamentos;
     private javax.swing.JTable tblMaquinaria;
     private javax.swing.JTextField txtBusqueda;

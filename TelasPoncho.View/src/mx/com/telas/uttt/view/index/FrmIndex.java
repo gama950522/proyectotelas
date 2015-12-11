@@ -53,34 +53,20 @@ public class FrmIndex extends javax.swing.JFrame implements Runnable {
         lblOperador = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        openMenuItem = new javax.swing.JMenuItem();
-        saveMenuItem = new javax.swing.JMenuItem();
-        saveAsMenuItem = new javax.swing.JMenuItem();
         exitMenuItem = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         mnuEmpresa = new javax.swing.JMenu();
         mnuProveeores = new javax.swing.JMenuItem();
-        mnuClientes = new javax.swing.JMenuItem();
         mnuPersonal = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
-        editMenu = new javax.swing.JMenu();
-        cutMenuItem = new javax.swing.JMenuItem();
-        copyMenuItem = new javax.swing.JMenuItem();
-        pasteMenuItem = new javax.swing.JMenuItem();
-        deleteMenuItem = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem11 = new javax.swing.JMenuItem();
         helpMenu = new javax.swing.JMenu();
-        contentMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -134,29 +120,6 @@ public class FrmIndex extends javax.swing.JFrame implements Runnable {
         fileMenu.setMnemonic('f');
         fileMenu.setText("ARCHIVO");
 
-        jMenu1.setText("Nuevo");
-
-        jMenuItem1.setText("Pedido");
-        jMenu1.add(jMenuItem1);
-
-        jMenuItem2.setText("Venta");
-        jMenu1.add(jMenuItem2);
-
-        fileMenu.add(jMenu1);
-
-        openMenuItem.setMnemonic('o');
-        openMenuItem.setText("Open");
-        fileMenu.add(openMenuItem);
-
-        saveMenuItem.setMnemonic('s');
-        saveMenuItem.setText("Save");
-        fileMenu.add(saveMenuItem);
-
-        saveAsMenuItem.setMnemonic('a');
-        saveAsMenuItem.setText("Save As ...");
-        saveAsMenuItem.setDisplayedMnemonicIndex(5);
-        fileMenu.add(saveAsMenuItem);
-
         exitMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/com/telas/uttt/view/img/Cancel-16.png"))); // NOI18N
         exitMenuItem.setText("Exit");
         exitMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -181,9 +144,6 @@ public class FrmIndex extends javax.swing.JFrame implements Runnable {
         });
         mnuEmpresa.add(mnuProveeores);
 
-        mnuClientes.setText("Clientes");
-        mnuEmpresa.add(mnuClientes);
-
         jMenu2.add(mnuEmpresa);
 
         mnuPersonal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/com/telas/uttt/view/img/Worker-16.png"))); // NOI18N
@@ -194,9 +154,6 @@ public class FrmIndex extends javax.swing.JFrame implements Runnable {
             }
         });
         jMenu2.add(mnuPersonal);
-
-        jMenuItem6.setText("Departamentos");
-        jMenu2.add(jMenuItem6);
 
         jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/com/telas/uttt/view/img/Deployment-16.png"))); // NOI18N
         jMenuItem7.setText("Maquinaria");
@@ -238,27 +195,6 @@ public class FrmIndex extends javax.swing.JFrame implements Runnable {
 
         menuBar.add(jMenu4);
 
-        editMenu.setMnemonic('e');
-        editMenu.setText("EDIT");
-
-        cutMenuItem.setMnemonic('t');
-        cutMenuItem.setText("Cut");
-        editMenu.add(cutMenuItem);
-
-        copyMenuItem.setMnemonic('y');
-        copyMenuItem.setText("Copy");
-        editMenu.add(copyMenuItem);
-
-        pasteMenuItem.setMnemonic('p');
-        pasteMenuItem.setText("Paste");
-        editMenu.add(pasteMenuItem);
-
-        deleteMenuItem.setMnemonic('d');
-        deleteMenuItem.setText("Delete");
-        editMenu.add(deleteMenuItem);
-
-        menuBar.add(editMenu);
-
         jMenu5.setText("CUENTA");
 
         jMenuItem11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/com/telas/uttt/view/img/Exit-16.png"))); // NOI18N
@@ -274,10 +210,6 @@ public class FrmIndex extends javax.swing.JFrame implements Runnable {
 
         helpMenu.setMnemonic('h');
         helpMenu.setText("AYUDA");
-
-        contentMenuItem.setMnemonic('c');
-        contentMenuItem.setText("Contents");
-        helpMenu.add(contentMenuItem);
 
         aboutMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/com/telas/uttt/view/img/UpgradeReport_Information.png"))); // NOI18N
         aboutMenuItem.setMnemonic('a');
@@ -439,28 +371,19 @@ public class FrmIndex extends javax.swing.JFrame implements Runnable {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
-    private javax.swing.JMenuItem contentMenuItem;
-    private javax.swing.JMenuItem copyMenuItem;
-    private javax.swing.JMenuItem cutMenuItem;
-    private javax.swing.JMenuItem deleteMenuItem;
     private javax.swing.JDesktopPane desktopPane;
-    private javax.swing.JMenu editMenu;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
@@ -472,14 +395,9 @@ public class FrmIndex extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel lblHora;
     private javax.swing.JLabel lblOperador;
     private javax.swing.JMenuBar menuBar;
-    private javax.swing.JMenuItem mnuClientes;
     private javax.swing.JMenu mnuEmpresa;
     private javax.swing.JMenuItem mnuPersonal;
     private javax.swing.JMenuItem mnuProveeores;
-    private javax.swing.JMenuItem openMenuItem;
-    private javax.swing.JMenuItem pasteMenuItem;
-    private javax.swing.JMenuItem saveAsMenuItem;
-    private javax.swing.JMenuItem saveMenuItem;
     // End of variables declaration//GEN-END:variables
     //</editor-fold>
 
