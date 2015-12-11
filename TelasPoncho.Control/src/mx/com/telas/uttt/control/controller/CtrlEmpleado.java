@@ -145,25 +145,25 @@ public class CtrlEmpleado implements IOperaciones {
             PreparedStatement query;
             if (departamento != null && turno != null) {
                 query = connection.prepareStatement("select * from empleado where idPersona in ("
-                                                + "     select idPersona from Persona where nombre like'" + nombre + "%') "
-                                                + "and idPuesto in  ("
-                                                + "     select idPuesto from Puesto where idDepartamento=?) and idTurno=?");
+                        + "     select idPersona from Persona where nombre like'" + nombre + "%') "
+                        + "and idPuesto in  ("
+                        + "     select idPuesto from Puesto where idDepartamento=?) and idTurno=?");
                 query.setInt(1, departamento.getIdDepartamento());
                 query.setInt(2, turno.getIdTurno());
             } else if (turno == null && departamento != null) {
                 query = connection.prepareStatement("select * from empleado where idPersona in ("
-                                                + "     select idPersona from Persona where nombre like'" + nombre + "%')"
-                                                + " and idPuesto in ("
-                                                + "     select idPuesto from Puesto where idDepartamento=?)");
+                        + "     select idPersona from Persona where nombre like'" + nombre + "%')"
+                        + " and idPuesto in ("
+                        + "     select idPuesto from Puesto where idDepartamento=?)");
                 query.setInt(1, departamento.getIdDepartamento());
             } else if (departamento == null && turno != null) {
                 query = connection.prepareStatement("select * from empleado where idPersona in ("
-                                                + "     select idPersona from Persona where nombre like'" + nombre + "%')"
-                                                + " and idTurno=?");
+                        + "     select idPersona from Persona where nombre like'" + nombre + "%')"
+                        + " and idTurno=?");
                 query.setInt(1, turno.getIdTurno());
             } else {
                 query = connection.prepareStatement("select * from empleado where idPersona in ("
-                                                + "     select idPersona from Persona where nombre like'" + nombre + "%')");
+                        + "     select idPersona from Persona where nombre like'" + nombre + "%')");
             }
             //System.out.println(query);
             ResultSet resultado = query.executeQuery();
@@ -232,12 +232,29 @@ public class CtrlEmpleado implements IOperaciones {
     public Object find(Integer id) {
         Empleado empleado = null;
         try {
-            PreparedStatement query = connection.prepareStatement("select * from Empleado where id=?");
-            //query.setInt(1, id);
+            PreparedStatement query = connection.prepareStatement("select * from Empleado where idEmpleado=?");
+            query.setInt(1, id);
             ResultSet resultado = query.executeQuery();
+            CtrlPersona ctrlPersona = new CtrlPersona(connection);
+            CtrlCuenta ctrlCuenta = new CtrlCuenta(connection);
+            CtrlPuesto ctrlPuesto = new CtrlPuesto(connection);
+            CtrlTurno ctrlTurno = new CtrlTurno(connection);
+            CtrlDireccion ctrlDireccion = new CtrlDireccion(connection);
+            CtrlTelefono ctrlTelefono = new CtrlTelefono(connection);
             if (resultado.next()) {
-                //empleado = new Empleado();
-                //temp.setIdEmpleado(resultado.getInt(1));
+                empleado = new Empleado();
+                empleado.setIdEmpleado(resultado.getInt(1));
+                empleado.setIdPersona((Persona) ctrlPersona.find(resultado.getInt(2)));
+                empleado.setIdCuenta((Cuenta) ctrlCuenta.find(resultado.getInt(3)));
+                empleado.setIdPuesto((Puesto) ctrlPuesto.find(resultado.getInt(4)));
+                empleado.setIdTurno((Turno) ctrlTurno.find(resultado.getInt(5)));
+                empleado.setIdDireccion((Direccion) ctrlDireccion.find(resultado.getInt(6)));
+                empleado.setIdTelefono((Telefono) ctrlTelefono.find(resultado.getInt(7)));
+                empleado.setNumControl(resultado.getString(8));
+                empleado.setCurp(resultado.getString(9));
+                empleado.setRfc(resultado.getString(10));
+                empleado.setEscolaridadl(resultado.getString(11));
+                empleado.setFechaRegistro(resultado.getDate(12));
                 //empleados.add(temp);
             }
             query.close();
@@ -276,7 +293,7 @@ public class CtrlEmpleado implements IOperaciones {
             CtrlTurno ctrlTurno = new CtrlTurno(connection);
             CtrlDireccion ctrlDireccion = new CtrlDireccion(connection);
             CtrlTelefono ctrlTelefono = new CtrlTelefono(connection);
-            while(rs.next()){
+            while (rs.next()) {
                 Empleado temp = new Empleado();
                 temp.setIdEmpleado(rs.getInt(1));
                 temp.setIdPersona((Persona) ctrlPersona.find(rs.getInt(2)));
