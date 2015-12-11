@@ -368,10 +368,10 @@
                                                       <Component id="cmbEstado" min="-2" pref="239" max="-2" attributes="0"/>
                                                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                                                       <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="cmbMunicipio" max="32767" attributes="0"/>
                                                   </Group>
                                                   <Component id="cmbLocalidad" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="cmbMunicipio" alignment="0" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
@@ -385,7 +385,7 @@
                                                       <Component id="txtTelefono" min="-2" pref="250" max="-2" attributes="0"/>
                                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <EmptySpace pref="54" max="32767" attributes="0"/>
                                                       <Component id="txtTipoTel" min="-2" pref="284" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Component id="txtEmail" max="32767" attributes="0"/>

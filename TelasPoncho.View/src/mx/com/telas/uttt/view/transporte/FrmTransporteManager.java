@@ -61,7 +61,6 @@ public class FrmTransporteManager extends javax.swing.JDialog {
         }
     }
 
-    
     private void setCheckBox() {
         try {
             cbxActivo.setEnabled(transporte.getActivo());
@@ -99,6 +98,7 @@ public class FrmTransporteManager extends javax.swing.JDialog {
                 }
                 for (int i = 0; i < lstConductores.size(); i++) {
                     Empleado temp = (Empleado) lstConductores.get(i);
+                    //String empleado = temp.getIdPersona().getNombre() + " " + temp.getIdPersona().getaPareno();
                     cmbEncargado.addItem(temp);
                 }
                 if (transporte != null) {
@@ -338,6 +338,11 @@ public class FrmTransporteManager extends javax.swing.JDialog {
 
         btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/com/telas/uttt/view/img/cross.png"))); // NOI18N
         btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         btnGuardar.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/com/telas/uttt/view/img/1447403077_ok.png"))); // NOI18N
@@ -433,6 +438,10 @@ public class FrmTransporteManager extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
     private boolean save() {
         return (transporte == null) ? add() : edit();
     }
@@ -444,8 +453,8 @@ public class FrmTransporteManager extends javax.swing.JDialog {
             connection.setAutoCommit(false);
             CtrlTrasnporte ctrlTrasnporte = new CtrlTrasnporte(connection);
             CtrlCaracteristica ctrlCaracteristica = new CtrlCaracteristica(connection);
-            if(ctrlCaracteristica.add(caracteristica)){
-                transporte.setIdCaracteristica((Caracteristica)ctrlCaracteristica.getLastField());
+            if (ctrlCaracteristica.add(caracteristica)) {
+                transporte.setIdCaracteristica((Caracteristica) ctrlCaracteristica.getLastField());
                 if (ctrlTrasnporte.add(transporte)) {
                     JOptionPane.showMessageDialog(this, "La información se ha guardado correctamente", getTitle(), JOptionPane.INFORMATION_MESSAGE);
                     connection.commit();
@@ -482,6 +491,9 @@ public class FrmTransporteManager extends javax.swing.JDialog {
             transportee.setCapasidad(Double.parseDouble(txtCapasidad.getText().trim()));
             transportee.setUnidadCapasidad(cmbCapasidad.getSelectedItem().toString());
             transportee.setIdEmpleado((Empleado) cmbEncargado.getSelectedItem());
+            transportee.setActivo(cbxActivo.isSelected());
+            transportee.setDisponible(cbxDisponible.isSelected());
+            transportee.setTieneRutas(cbxRutas.isSelected());
             return transportee;
         } catch (Exception ex) {
             System.err.println(ex);
