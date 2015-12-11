@@ -24,17 +24,17 @@ import mx.com.telas.uttt.data.entity.Turno;
  */
 public class CtrlEmpleado implements IOperaciones {
 
-    private Connection conexion;
+    private final Connection connection;
 
-    public CtrlEmpleado(Connection conexion) {
-        this.conexion = conexion;
+    public CtrlEmpleado(Connection connection) {
+        this.connection = connection;
     }
 
     @Override
     public boolean add(Object o) {
         Empleado empleado = (Empleado) o;
         try {
-            PreparedStatement query = conexion.prepareStatement("insert into Empleado (idPersona, idCuenta, idPuesto, idTurno, idDireccion, idTelefono, numControl, curp, rfc, escolaridad, fechaRegistro) values (?,?,?,?,?,?,?,?,?,?,?) ");
+            PreparedStatement query = connection.prepareStatement("insert into Empleado (idPersona, idCuenta, idPuesto, idTurno, idDireccion, idTelefono, numControl, curp, rfc, escolaridad, fechaRegistro) values (?,?,?,?,?,?,?,?,?,?,?) ");
             query.setInt(1, empleado.getIdPersona().getIdPersona());
             query.setInt(2, empleado.getIdCuenta().getIdCuenta());
             query.setInt(3, empleado.getIdPuesto().getIdPuesto());
@@ -59,7 +59,7 @@ public class CtrlEmpleado implements IOperaciones {
     public boolean edit(Object o) {
         Empleado empleado = (Empleado) o;
         try {
-            PreparedStatement query = conexion.prepareStatement("update Empleado set curp=?, rfc=?, escolaridad=? where idEmpleado=? ");
+            PreparedStatement query = connection.prepareStatement("update Empleado set curp=?, rfc=?, escolaridad=? where idEmpleado=? ");
             query.setString(1, empleado.getCurp());
             query.setString(2, empleado.getRfc());
             query.setString(3, empleado.getEscolaridad());
@@ -75,7 +75,7 @@ public class CtrlEmpleado implements IOperaciones {
     @Override
     public boolean delete(Integer id) {
         try {
-            PreparedStatement query = conexion.prepareStatement("delete from Empleado where idEmpleado=?");
+            PreparedStatement query = connection.prepareStatement("delete from Empleado where idEmpleado=?");
             query.setInt(1, id);
             query.execute();
             return true;
@@ -88,14 +88,14 @@ public class CtrlEmpleado implements IOperaciones {
     @Override
     public List<Object> find() {
         List<Object> empleados = null;
-        CtrlPersona ctrlPersona = new CtrlPersona(conexion);
-        CtrlCuenta ctrlCuenta = new CtrlCuenta(conexion);
-        CtrlPuesto ctrlPuesto = new CtrlPuesto(conexion);
-        CtrlTurno ctrlTurno = new CtrlTurno(conexion);
-        CtrlDireccion ctrlDireccion = new CtrlDireccion(conexion);
-        CtrlTelefono ctrlTelefono = new CtrlTelefono(conexion);
+        CtrlPersona ctrlPersona = new CtrlPersona(connection);
+        CtrlCuenta ctrlCuenta = new CtrlCuenta(connection);
+        CtrlPuesto ctrlPuesto = new CtrlPuesto(connection);
+        CtrlTurno ctrlTurno = new CtrlTurno(connection);
+        CtrlDireccion ctrlDireccion = new CtrlDireccion(connection);
+        CtrlTelefono ctrlTelefono = new CtrlTelefono(connection);
         try {
-            PreparedStatement query = conexion.prepareStatement("select * from Empleado");
+            PreparedStatement query = connection.prepareStatement("select * from Empleado");
             ResultSet resultado = query.executeQuery();
             empleados = new ArrayList<>();
             while (resultado.next()) {
@@ -135,34 +135,34 @@ public class CtrlEmpleado implements IOperaciones {
 
     public List<Object> find(String nombre, Departamento departamento, Turno turno) {
         List<Object> empleados = null;
-        CtrlPersona ctrlPersona = new CtrlPersona(conexion);
-        CtrlCuenta ctrlCuenta = new CtrlCuenta(conexion);
-        CtrlPuesto ctrlPuesto = new CtrlPuesto(conexion);
-        CtrlTurno ctrlTurno = new CtrlTurno(conexion);
-        CtrlDireccion ctrlDireccion = new CtrlDireccion(conexion);
-        CtrlTelefono ctrlTelefono = new CtrlTelefono(conexion);
+        CtrlPersona ctrlPersona = new CtrlPersona(connection);
+        CtrlCuenta ctrlCuenta = new CtrlCuenta(connection);
+        CtrlPuesto ctrlPuesto = new CtrlPuesto(connection);
+        CtrlTurno ctrlTurno = new CtrlTurno(connection);
+        CtrlDireccion ctrlDireccion = new CtrlDireccion(connection);
+        CtrlTelefono ctrlTelefono = new CtrlTelefono(connection);
         try {
             PreparedStatement query;
             if (departamento != null && turno != null) {
-                query = conexion.prepareStatement("select * from empleado where idPersona in ("
+                query = connection.prepareStatement("select * from empleado where idPersona in ("
                                                 + "     select idPersona from Persona where nombre like'" + nombre + "%') "
                                                 + "and idPuesto in  ("
                                                 + "     select idPuesto from Puesto where idDepartamento=?) and idTurno=?");
                 query.setInt(1, departamento.getIdDepartamento());
                 query.setInt(2, turno.getIdTurno());
             } else if (turno == null && departamento != null) {
-                query = conexion.prepareStatement("select * from empleado where idPersona in ("
+                query = connection.prepareStatement("select * from empleado where idPersona in ("
                                                 + "     select idPersona from Persona where nombre like'" + nombre + "%')"
                                                 + " and idPuesto in ("
                                                 + "     select idPuesto from Puesto where idDepartamento=?)");
                 query.setInt(1, departamento.getIdDepartamento());
             } else if (departamento == null && turno != null) {
-                query = conexion.prepareStatement("select * from empleado where idPersona in ("
+                query = connection.prepareStatement("select * from empleado where idPersona in ("
                                                 + "     select idPersona from Persona where nombre like'" + nombre + "%')"
                                                 + " and idTurno=?");
                 query.setInt(1, turno.getIdTurno());
             } else {
-                query = conexion.prepareStatement("select * from empleado where idPersona in ("
+                query = connection.prepareStatement("select * from empleado where idPersona in ("
                                                 + "     select idPersona from Persona where nombre like'" + nombre + "%')");
             }
             //System.out.println(query);
@@ -194,14 +194,14 @@ public class CtrlEmpleado implements IOperaciones {
 
     public Object find(String user, String password) {
         Empleado empleados = null;
-        CtrlPersona ctrlPersona = new CtrlPersona(conexion);
-        CtrlCuenta ctrlCuenta = new CtrlCuenta(conexion);
-        CtrlPuesto ctrlPuesto = new CtrlPuesto(conexion);
-        CtrlTurno ctrlTurno = new CtrlTurno(conexion);
-        CtrlDireccion ctrlDireccion = new CtrlDireccion(conexion);
-        CtrlTelefono ctrlTelefono = new CtrlTelefono(conexion);
+        CtrlPersona ctrlPersona = new CtrlPersona(connection);
+        CtrlCuenta ctrlCuenta = new CtrlCuenta(connection);
+        CtrlPuesto ctrlPuesto = new CtrlPuesto(connection);
+        CtrlTurno ctrlTurno = new CtrlTurno(connection);
+        CtrlDireccion ctrlDireccion = new CtrlDireccion(connection);
+        CtrlTelefono ctrlTelefono = new CtrlTelefono(connection);
         try {
-            PreparedStatement query = conexion.prepareStatement("select * from empleado where idCuenta = (select idCuenta from Cuenta where usuario=? and password=?)");
+            PreparedStatement query = connection.prepareStatement("select * from empleado where idCuenta = (select idCuenta from Cuenta where usuario=? and password=?)");
             query.setString(1, user);
             query.setString(2, password);
             ResultSet resultado = query.executeQuery();
@@ -232,7 +232,7 @@ public class CtrlEmpleado implements IOperaciones {
     public Object find(Integer id) {
         Empleado empleado = null;
         try {
-            PreparedStatement query = conexion.prepareStatement("select * from Empleado where id=?");
+            PreparedStatement query = connection.prepareStatement("select * from Empleado where id=?");
             //query.setInt(1, id);
             ResultSet resultado = query.executeQuery();
             if (resultado.next()) {
@@ -262,6 +262,42 @@ public class CtrlEmpleado implements IOperaciones {
     @Override
     public Object getLastField() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public List<Object> findConductores() {
+        List<Object> lstConductores = null;
+        try {
+            PreparedStatement query = connection.prepareStatement("select * from Empleado where idPuesto=5");
+            ResultSet rs = query.executeQuery();
+            lstConductores = new ArrayList<>();
+            CtrlPersona ctrlPersona = new CtrlPersona(connection);
+            CtrlCuenta ctrlCuenta = new CtrlCuenta(connection);
+            CtrlPuesto ctrlPuesto = new CtrlPuesto(connection);
+            CtrlTurno ctrlTurno = new CtrlTurno(connection);
+            CtrlDireccion ctrlDireccion = new CtrlDireccion(connection);
+            CtrlTelefono ctrlTelefono = new CtrlTelefono(connection);
+            while(rs.next()){
+                Empleado temp = new Empleado();
+                temp.setIdEmpleado(rs.getInt(1));
+                temp.setIdPersona((Persona) ctrlPersona.find(rs.getInt(2)));
+                temp.setIdCuenta((Cuenta) ctrlCuenta.find(rs.getInt(3)));
+                temp.setIdPuesto((Puesto) ctrlPuesto.find(rs.getInt(4)));
+                temp.setIdTurno((Turno) ctrlTurno.find(rs.getInt(5)));
+                temp.setIdDireccion((Direccion) ctrlDireccion.find(rs.getInt(6)));
+                temp.setIdTelefono((Telefono) ctrlTelefono.find(rs.getInt(7)));
+                temp.setNumControl(rs.getString(8));
+                temp.setCurp(rs.getString(9));
+                temp.setRfc(rs.getString(10));
+                temp.setEscolaridadl(rs.getString(11));
+                temp.setFechaRegistro(rs.getDate(12));
+                lstConductores.add(temp);
+            }
+            query.close();
+            return lstConductores;
+        } catch (Exception ex) {
+            System.err.println(ex);
+            return lstConductores;
+        }
     }
 
 }

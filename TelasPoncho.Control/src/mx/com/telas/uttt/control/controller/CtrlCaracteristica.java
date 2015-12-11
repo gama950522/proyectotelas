@@ -13,7 +13,7 @@ import mx.com.telas.uttt.data.entity.Caracteristica;
  */
 public class CtrlCaracteristica implements IOperaciones{
     
-    private Connection connection;
+    private final Connection connection;
     
     public CtrlCaracteristica(Connection connection) {
         this.connection=connection;

@@ -15,7 +15,7 @@ import mx.com.telas.uttt.data.entity.Transporte;
  */
 public class CtrlTrasnporte implements IOperaciones{
 
-    private Connection connection;
+    private final Connection connection;
     
     public CtrlTrasnporte(Connection connection) {
         this.connection=connection;
@@ -23,7 +23,14 @@ public class CtrlTrasnporte implements IOperaciones{
 
     @Override
     public boolean add(Object o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Transporte transporte = (Transporte)o;
+        try {
+            PreparedStatement query = connection.prepareStatement("insert into Transporte () values (?,?,?,?,?,?,?,?,?,?)");
+            
+            return true;
+        } catch (Exception ex) {
+            return false;
+        }
     }
 
     @Override
