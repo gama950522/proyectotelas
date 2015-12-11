@@ -150,7 +150,7 @@ public class Empleado {
 
     @Override
     public String toString() {
-        return "mx.com.telas.uttt.data.entity.Empleado[ id=" + getIdEmpleado() + " ]";
+        return getIdPersona().getNombre() + " " + getIdPersona().getaPareno();
     }
     
 }
