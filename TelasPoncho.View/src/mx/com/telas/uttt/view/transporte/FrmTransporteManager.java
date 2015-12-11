@@ -36,12 +36,12 @@ public class FrmTransporteManager extends javax.swing.JDialog {
     private void initData(Object transporte) {
         try {
             connection = Conexion.getConexion();
+            this.transporte = (Transporte) transporte;
             if (transporte != null) {
                 setTextBox();
                 setCheckBox();
             }
             setComboBox();
-            this.transporte = (Transporte) transporte;
         } catch (Exception ex) {
             System.err.println(ex);
         }
@@ -63,9 +63,9 @@ public class FrmTransporteManager extends javax.swing.JDialog {
 
     private void setCheckBox() {
         try {
-            cbxActivo.setEnabled(transporte.getActivo());
-            cbxDisponible.setEnabled(transporte.getDisponible());
-            cbxRutas.setEnabled(transporte.getTieneRutas());
+            cbxActivo.setSelected(transporte.getActivo());
+            cbxDisponible.setSelected(transporte.getDisponible());
+            cbxRutas.setSelected(transporte.getTieneRutas());
         } catch (Exception ex) {
             System.err.println(ex);
         }
@@ -79,7 +79,7 @@ public class FrmTransporteManager extends javax.swing.JDialog {
                 cmbMarca.setSelectedItem(transporte.getIdCaracteristica().getMarca());
                 cmbModelo.setSelectedItem(transporte.getIdCaracteristica().getModelo());
                 cmbVelocidad.setSelectedItem(transporte.getUnidadVelocidad());
-                cmbCosto.setSelectedItem(transporte.getIdCaracteristica().getMoneda());
+                cmbCosto.setSelectedItem(transporte.getIdCaracteristica().getCosto());
                 cmbPeso.setSelectedItem(transporte.getUnidadPeso());
                 cmbCapasidad.setSelectedItem(transporte.getUnidadCapasidad());
             }
@@ -152,9 +152,10 @@ public class FrmTransporteManager extends javax.swing.JDialog {
         btnCancelar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         lblAccion = new javax.swing.JLabel();
-        lblInformacion = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Medios de transportes");
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(241, 240, 240));
 
@@ -195,9 +196,15 @@ public class FrmTransporteManager extends javax.swing.JDialog {
 
         jLabel11.setText("Costo:");
 
+        cmbCosto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--- Selecciona ---" }));
+
         jLabel12.setText("Peso:");
 
+        cmbPeso.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--- Selecciona ---" }));
+
         jLabel13.setText("Capasidad:");
+
+        cmbCapasidad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--- Selecciona ---" }));
 
         jPanel3.setBackground(new java.awt.Color(241, 241, 241));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("cositas"));
@@ -273,7 +280,7 @@ public class FrmTransporteManager extends javax.swing.JDialog {
                             .addComponent(txtCapasidad))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(cmbPeso, javax.swing.GroupLayout.Alignment.LEADING, 0, 80, Short.MAX_VALUE)
+                            .addComponent(cmbPeso, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cmbCosto, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cmbCapasidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -357,11 +364,6 @@ public class FrmTransporteManager extends javax.swing.JDialog {
         lblAccion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAccion.setText("[ A C C I O N ]");
 
-        lblInformacion.setForeground(new java.awt.Color(204, 0, 0));
-        lblInformacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/com/telas/uttt/view/img/1447406328_high_priority.png"))); // NOI18N
-        lblInformacion.setText("jLabel7");
-        lblInformacion.setToolTipText("");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -380,8 +382,7 @@ public class FrmTransporteManager extends javax.swing.JDialog {
                                 .addGap(6, 6, 6)
                                 .addComponent(lblAccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblInformacion)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnGuardar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnCancelar)))
@@ -404,8 +405,7 @@ public class FrmTransporteManager extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar)
-                    .addComponent(btnGuardar)
-                    .addComponent(lblInformacion))
+                    .addComponent(btnGuardar))
                 .addContainerGap())
         );
 
@@ -421,6 +421,7 @@ public class FrmTransporteManager extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtVelocidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVelocidadActionPerformed
@@ -470,11 +471,25 @@ public class FrmTransporteManager extends javax.swing.JDialog {
     }
 
     private boolean edit() {
+        Transporte transporte = getTransporte();
+        Caracteristica caracteristica = getCaracteristica();
         try {
-
+            connection.setAutoCommit(false);
+            CtrlTrasnporte ctrlTrasnporte = new CtrlTrasnporte(connection);
+            CtrlCaracteristica ctrlCaracteristica = new CtrlCaracteristica(connection);
+            if (ctrlCaracteristica.edit(caracteristica)) {
+                if (ctrlTrasnporte.edit(transporte)) {
+                    JOptionPane.showMessageDialog(this, "La información se ha guardado correctamente", getTitle(), JOptionPane.INFORMATION_MESSAGE);
+                    connection.commit();
+                    return true;
+                }
+            }
+            connection.rollback();
+            return false;
         } catch (Exception ex) {
+            System.err.println(ex);
+            return false;
         }
-        return false;
     }
 
     private Transporte getTransporte() {
@@ -589,7 +604,6 @@ public class FrmTransporteManager extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblAccion;
-    private javax.swing.JLabel lblInformacion;
     private javax.swing.JTextField txtCapasidad;
     private javax.swing.JTextField txtCosto;
     private javax.swing.JTextField txtMatricula;

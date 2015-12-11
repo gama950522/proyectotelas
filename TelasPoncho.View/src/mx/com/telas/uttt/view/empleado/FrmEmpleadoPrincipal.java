@@ -35,7 +35,7 @@ public class FrmEmpleadoPrincipal extends javax.swing.JInternalFrame {
     private Empleado empleado;
     private Connection connection;
     private String nombreEmpleado ="";
-    private Frame parent;
+    private final Frame parent;
     private Departamento idDepartamento;
     private Turno idTurno;
     

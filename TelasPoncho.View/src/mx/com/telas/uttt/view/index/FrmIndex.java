@@ -10,6 +10,7 @@ import mx.com.telas.uttt.view.empleado.FrmEmpleadoPrincipal;
 import mx.com.telas.uttt.view.maquinaria.FrmMaquinariaPrincipal;
 import mx.com.telas.uttt.view.proveedor.FrmProveedorPrincipal;
 import mx.com.telas.uttt.view.stock.FrmStockPrincipal;
+import mx.com.telas.uttt.view.transporte.FrmTransportePrincipal;
 
 /**
  *
@@ -208,6 +209,11 @@ public class FrmIndex extends javax.swing.JFrame implements Runnable {
 
         jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mx/com/telas/uttt/view/img/Truck-16.png"))); // NOI18N
         jMenuItem8.setText("Medio de transporte");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem8);
 
         menuBar.add(jMenu2);
@@ -379,6 +385,17 @@ public class FrmIndex extends javax.swing.JFrame implements Runnable {
             System.err.println(ex);
         }
     }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        try {
+            FrmTransportePrincipal frmTP= new FrmTransportePrincipal(this);
+            desktopPane.add(frmTP);
+            frmTP.show();
+            frmTP.setMaximum(true);
+        } catch (Exception ex) {
+            System.err.println(ex);
+        }
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void cerrarSesion(){
         Login.setEmpleado(null);
